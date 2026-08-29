@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: oryxos
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: jdbc:sqlite:.oryxos/oryxos.db
+    driver-class-name: org.sqlite.JDBC
+  ai:
+    dashscope:
+      api-key: ${DASHSCOPE_API_KEY:sk-placeholder}
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: none
+    open-in-view: false

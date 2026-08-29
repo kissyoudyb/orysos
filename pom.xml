@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.0</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>io.oryxos</groupId>
+  <artifactId>oryxos</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>OryxOS</name>
+  <description>OryxOS：Java 实现的开源 Agent OS 运行时内核</description>
+
+  <modules>
+    <module>oryxos-core</module>
+    <module>oryxos-provider</module>
+    <module>oryxos-memory</module>
+    <module>oryxos-tool</module>
+    <module>oryxos-channel-cli</module>
+    <module>oryxos-web</module>
+    <module>oryxos-storage</module>
+    <module>oryxos-cli</module>
+    <module>oryxos-boot</module>
+  </modules>
+
+  <properties>
+    <java.version>21</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring-ai-alibaba.version>1.1.2.3</spring-ai-alibaba.version>
+    <springdoc-openapi.version>2.8.9</springdoc-openapi.version>
+    <sqlite-jdbc.version>3.53.4.0</sqlite-jdbc.version>
+    <hibernate-community-dialects.version>6.6.15.Final</hibernate-community-dialects.version>
+    <picocli.version>4.7.6</picocli.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- 内部模块 -->
+      <dependency>
+        <groupId>io.oryxos</groupId>
+        <artifactId>oryxos-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.oryxos</groupId>
+        <artifactId>oryxos-provider</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.oryxos</groupId>
+        <artifactId>oryxos-memory</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.oryxos</groupId>
+        <artifactId>oryxos-tool</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.oryxos</groupId>
+        <artifactId>oryxos-channel-cli</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.oryxos</groupId>
+        <artifactId>oryxos-web</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.oryxos</groupId>
+        <artifactId>oryxos-storage</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.oryxos</groupId>
+        <artifactId>oryxos-cli</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- 核心能力一：LLM Provider（Spring AI Alibaba BOM，GA 后按模型拆分 starter） -->
+      <dependency>
+        <groupId>com.alibaba.cloud.ai</groupId>
+        <artifactId>spring-ai-alibaba-bom</artifactId>
+        <version>${spring-ai-alibaba.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.cloud.ai</groupId>
+        <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
+        <version>${spring-ai-alibaba.version}</version>
+      </dependency>
+
+      <!-- 核心能力五：Web Service -->
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>${springdoc-openapi.version}</version>
+      </dependency>
+
+      <!-- 持久化 -->
+      <dependency>
+        <groupId>org.xerial</groupId>
+        <artifactId>sqlite-jdbc</artifactId>
+        <version>${sqlite-jdbc.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hibernate.orm</groupId>
+        <artifactId>hibernate-community-dialects</artifactId>
+        <version>${hibernate-community-dialects.version}</version>
+      </dependency>
+
+      <!-- 命令行 -->
+      <dependency>
+        <groupId>info.picocli</groupId>
+        <artifactId>picocli</artifactId>
+        <version>${picocli.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.oryxos</groupId>
+    <artifactId>oryxos</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>oryxos-provider</artifactId>
+  <name>OryxOS Provider</name>
+  <description>核心能力一：对接 LLM。ProviderService、Function Calling 适配、provider name 到 ChatModel 的显式映射</description>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.oryxos</groupId>
+      <artifactId>oryxos-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.alibaba.cloud.ai</groupId>
+      <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
+    </dependency>
+  </dependencies>
+</project>
