@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1015" viewBox="0 0 1240 1015" role="img" aria-label="OryxOS 架构总览图" font-family="-apple-system,'Segoe UI','Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1240" height="1015" fill="#FFFFFF"/>
+
+  <!-- 标题 -->
+  <text x="620" y="44" text-anchor="middle" font-size="26" font-weight="bold" fill="#0F172A">OryxOS 架构总览</text>
+  <text x="620" y="68" text-anchor="middle" font-size="13" fill="#64748B">Spring Boot 3.x 单体 · 一个引擎（ReAct）调度三大能力 · CLI 与 REST 双入口 · 实例无状态</text>
+
+  <!-- 图例 -->
+  <rect x="950" y="96" width="260" height="196" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="966" y="122" font-size="13" font-weight="bold" fill="#334155">图例</text>
+  <rect x="966" y="136" width="14" height="14" rx="3" fill="#DBEAFE" stroke="#2563EB"/>
+  <text x="990" y="147" font-size="11" fill="#475569">接入层（Channel / API）</text>
+  <rect x="966" y="162" width="14" height="14" rx="3" fill="#EDE9FE" stroke="#7C3AED"/>
+  <text x="990" y="173" font-size="11" fill="#475569">引擎层（ReAct 循环）</text>
+  <rect x="966" y="188" width="14" height="14" rx="3" fill="#D1FAE5" stroke="#059669"/>
+  <text x="990" y="199" font-size="11" fill="#475569">能力层（Provider / Memory / Tool）</text>
+  <rect x="966" y="214" width="14" height="14" rx="3" fill="#FEF3C7" stroke="#D97706"/>
+  <text x="990" y="225" font-size="11" fill="#475569">基础层（加载与配置）</text>
+  <rect x="966" y="240" width="14" height="14" rx="3" fill="#F1F5F9" stroke="#475569"/>
+  <text x="990" y="251" font-size="11" fill="#475569">数据（SQLite / 文件系统）</text>
+  <rect x="966" y="266" width="14" height="14" rx="3" fill="#FFFFFF" stroke="#94A3B8" stroke-dasharray="4 3"/>
+  <text x="990" y="277" font-size="11" fill="#475569">外部依赖</text>
+
+  <!-- 外部参与者 -->
+  <rect x="140" y="84" width="200" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="240" y="111" text-anchor="middle" font-size="13" fill="#334155">用户（CLI 终端）</text>
+  <rect x="590" y="84" width="220" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="700" y="111" text-anchor="middle" font-size="13" fill="#334155">业务系统（HTTP 接入）</text>
+  <line x1="240" y1="132" x2="240" y2="206" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="700" y1="132" x2="700" y2="206" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- 内核容器 -->
+  <rect x="40" y="160" width="880" height="830" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="896" y="178" text-anchor="end" font-size="10.5" fill="#94A3B8">OryxOS 内核（单 fat JAR 进程）</text>
+
+  <!-- 接入层 -->
+  <rect x="60" y="180" width="840" height="96" rx="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.5"/>
+  <rect x="76" y="169" width="76" height="22" rx="11" fill="#2563EB"/>
+  <text x="114" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">接入层</text>
+  <rect x="100" y="212" width="300" height="48" rx="6" fill="#FFFFFF" stroke="#2563EB"/>
+  <text x="250" y="232" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#1E3A8A">CLI Channel</text>
+  <text x="250" y="250" text-anchor="middle" font-size="11" fill="#475569">oryxos chat · 交互对话</text>
+  <rect x="520" y="212" width="340" height="48" rx="6" fill="#FFFFFF" stroke="#2563EB"/>
+  <text x="690" y="232" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#1E3A8A">Web Service</text>
+  <text x="690" y="250" text-anchor="middle" font-size="11" fill="#475569">REST API 核心 10 端点 · oryxos serve · Spring MVC</text>
+
+  <line x1="480" y1="280" x2="480" y2="296" stroke="#94A3B8" stroke-width="1.5" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="492" y="292" font-size="11" fill="#64748B">消息进 / 响应出</text>
+
+  <!-- 引擎层 -->
+  <rect x="60" y="300" width="840" height="170" rx="10" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+  <rect x="76" y="289" width="76" height="22" rx="11" fill="#7C3AED"/>
+  <text x="114" y="305" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">引擎层</text>
+
+  <rect x="90" y="340" width="160" height="40" rx="20" fill="#FFFFFF" stroke="#7C3AED"/>
+  <text x="170" y="365" text-anchor="middle" font-size="13" font-weight="bold" fill="#4C1D95">AgentService</text>
+  <line x1="254" y1="360" x2="326" y2="360" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <rect x="330" y="340" width="200" height="40" rx="20" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2.5"/>
+  <text x="430" y="365" text-anchor="middle" font-size="13" font-weight="bold" fill="#4C1D95">ReActLoop</text>
+  <path d="M 412 336 A 20 14 0 1 1 448 336" fill="none" stroke="#7C3AED" stroke-width="1.3" marker-end="url(#ah)"/>
+
+  <line x1="534" y1="360" x2="606" y2="360" stroke="#94A3B8" stroke-width="1.5" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="570" y="352" text-anchor="middle" font-size="9.5" fill="#64748B">调度 / 回填</text>
+
+  <rect x="610" y="340" width="250" height="40" rx="20" fill="#FFFFFF" stroke="#7C3AED"/>
+  <text x="735" y="365" text-anchor="middle" font-size="13" font-weight="bold" fill="#4C1D95">ToolExecutor</text>
+
+  <line x1="430" y1="384" x2="430" y2="394" stroke="#94A3B8" stroke-width="1.5" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="442" y="393" font-size="10.5" fill="#64748B">组装 Prompt</text>
+
+  <rect x="330" y="398" width="200" height="36" rx="18" fill="#FFFFFF" stroke="#7C3AED"/>
+  <text x="430" y="421" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#4C1D95">PromptBuilder</text>
+
+  <text x="480" y="452" text-anchor="middle" font-size="10.5" fill="#64748B">ReAct 主循环：LLM 思考 → 调用 Tool → 结果回填 → 继续推理，达到 max_iterations（默认 10）终止</text>
+
+  <line x1="480" y1="474" x2="480" y2="496" stroke="#94A3B8" stroke-width="1.5" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="492" y="489" font-size="11" fill="#64748B">调 LLM · 读写记忆 · 执行工具</text>
+
+  <!-- 能力层 -->
+  <rect x="60" y="500" width="840" height="200" rx="10" fill="#D1FAE5" stroke="#059669" stroke-width="1.5"/>
+  <rect x="76" y="489" width="76" height="22" rx="11" fill="#059669"/>
+  <text x="114" y="505" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">能力层</text>
+
+  <rect x="90" y="534" width="230" height="110" rx="8" fill="#FFFFFF" stroke="#059669"/>
+  <text x="205" y="558" text-anchor="middle" font-size="13" font-weight="bold" fill="#065F46">Memory 记忆</text>
+  <text x="205" y="580" text-anchor="middle" font-size="10.5" fill="#475569">MemoryService 统一门面</text>
+  <text x="205" y="599" text-anchor="middle" font-size="10.5" fill="#475569">会话记忆 · SessionManager + SQLite</text>
+  <text x="205" y="618" text-anchor="middle" font-size="10.5" fill="#475569">长期记忆 · LongTermMemory</text>
+  <text x="205" y="637" text-anchor="middle" font-size="10.5" fill="#475569">MEMORY.md · 关键词检索</text>
+
+  <rect x="350" y="534" width="230" height="110" rx="8" fill="#FFFFFF" stroke="#059669"/>
+  <text x="465" y="558" text-anchor="middle" font-size="13" font-weight="bold" fill="#065F46">Provider 对接 LLM</text>
+  <text x="465" y="580" text-anchor="middle" font-size="10.5" fill="#475569">ProviderService</text>
+  <text x="465" y="599" text-anchor="middle" font-size="10.5" fill="#475569">显式 name → ChatModel 映射</text>
+  <text x="465" y="618" text-anchor="middle" font-size="10.5" fill="#475569">基于 Spring AI Alibaba</text>
+  <text x="465" y="637" text-anchor="middle" font-size="10.5" fill="#475569">协议转换 · Function Calling 适配</text>
+
+  <rect x="610" y="534" width="250" height="110" rx="8" fill="#FFFFFF" stroke="#059669"/>
+  <text x="735" y="558" text-anchor="middle" font-size="13" font-weight="bold" fill="#065F46">Tool 工具体系</text>
+  <text x="735" y="580" text-anchor="middle" font-size="10.5" fill="#475569">ToolRegistry · OryxTool 统一抽象</text>
+  <text x="735" y="599" text-anchor="middle" font-size="10.5" fill="#475569">内置 File / Shell / Http Tool</text>
+  <text x="735" y="618" text-anchor="middle" font-size="10.5" fill="#475569">SandboxChecker 白名单校验</text>
+  <text x="735" y="637" text-anchor="middle" font-size="10.5" fill="#475569">McpClientService · McpToolAdapter</text>
+
+  <circle cx="884" cy="570" r="3" fill="#64748B"/>
+  <line x1="884" y1="570" x2="944" y2="570" stroke="#64748B" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="942" y="562" text-anchor="end" font-size="9.5" fill="#64748B">ProviderService</text>
+
+  <circle cx="884" cy="680" r="3" fill="#64748B"/>
+  <line x1="884" y1="680" x2="944" y2="680" stroke="#64748B" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="942" y="672" text-anchor="end" font-size="9.5" fill="#64748B">McpClientService</text>
+
+  <line x1="480" y1="704" x2="480" y2="726" stroke="#94A3B8" stroke-width="1.5" marker-start="url(#ah)" marker-end="url(#ah)"/>
+  <text x="492" y="719" font-size="11" fill="#64748B">加载 Profile / 上下文 / 密钥配置</text>
+
+  <!-- 基础层 -->
+  <rect x="60" y="730" width="840" height="96" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+  <rect x="76" y="719" width="76" height="22" rx="11" fill="#D97706"/>
+  <text x="114" y="735" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">基础层</text>
+
+  <rect x="90" y="758" width="250" height="44" rx="6" fill="#FFFFFF" stroke="#D97706"/>
+  <text x="215" y="775" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400E">ContextLoader</text>
+  <text x="215" y="792" text-anchor="middle" font-size="10" fill="#475569">Bootstrap(AGENTS/SOUL/USER) + SKILL.md</text>
+
+  <rect x="365" y="758" width="220" height="44" rx="6" fill="#FFFFFF" stroke="#D97706"/>
+  <text x="475" y="775" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400E">ProfileLoader · Registry</text>
+  <text x="475" y="792" text-anchor="middle" font-size="10" fill="#475569">Profile YAML 加载与校验</text>
+
+  <rect x="610" y="758" width="280" height="44" rx="6" fill="#FFFFFF" stroke="#D97706"/>
+  <text x="750" y="775" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#92400E">ConfigLoader</text>
+  <text x="750" y="792" text-anchor="middle" font-size="10" fill="#475569">环境变量 ${ENV_VAR} 占位 · 凭证不落地</text>
+
+  <line x1="260" y1="830" x2="260" y2="860" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+  <line x1="705" y1="830" x2="705" y2="860" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+  <text x="502" y="848" text-anchor="middle" font-size="11" fill="#64748B">持久化读写 · 状态外置</text>
+
+  <!-- 数据层 -->
+  <rect x="60" y="866" width="400" height="104" rx="10" fill="#F1F5F9" stroke="#475569"/>
+  <text x="260" y="890" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">SQLite · oryxos.db</text>
+  <text x="260" y="912" text-anchor="middle" font-size="10.5" fill="#475569">sessions — 会话历史（跨重启恢复）</text>
+  <text x="260" y="930" text-anchor="middle" font-size="10.5" fill="#475569">tool_invocations — Tool 审计 · day one 落库</text>
+  <text x="260" y="948" text-anchor="middle" font-size="10.5" fill="#475569">llm_calls — LLM 调用与 token 统计</text>
+
+  <rect x="490" y="866" width="430" height="104" rx="10" fill="#F1F5F9" stroke="#475569"/>
+  <text x="705" y="890" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">文件系统 · .oryxos/</text>
+  <text x="705" y="912" text-anchor="middle" font-size="10.5" fill="#475569">profiles/ · skills/ · mcp_servers.yaml · logs/</text>
+  <text x="705" y="930" text-anchor="middle" font-size="10.5" fill="#475569">memory/MEMORY.md — 长期记忆（Agent 读写）</text>
+  <text x="705" y="948" text-anchor="middle" font-size="10.5" fill="#475569">AGENTS.md · SOUL.md · USER.md — Bootstrap</text>
+
+  <rect x="76" y="855" width="64" height="22" rx="11" fill="#475569"/>
+  <text x="108" y="871" text-anchor="middle" font-size="12" font-weight="bold" fill="#FFFFFF">数据</text>
+
+  <!-- 外部依赖 -->
+  <text x="1080" y="500" text-anchor="middle" font-size="12" font-weight="bold" fill="#64748B">外部依赖</text>
+
+  <rect x="950" y="510" width="260" height="120" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-dasharray="6 4"/>
+  <text x="1080" y="536" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">LLM Provider API</text>
+  <text x="1080" y="560" text-anchor="middle" font-size="10.5" fill="#64748B">DeepSeek · Kimi · 通义 · 智谱</text>
+  <text x="1080" y="578" text-anchor="middle" font-size="10.5" fill="#64748B">Anthropic · OpenAI</text>
+  <text x="1080" y="600" text-anchor="middle" font-size="10.5" fill="#64748B">本地推理（Ollama / vLLM）</text>
+
+  <rect x="950" y="650" width="260" height="110" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-dasharray="6 4"/>
+  <text x="1080" y="676" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">MCP Servers</text>
+  <text x="1080" y="700" text-anchor="middle" font-size="10.5" fill="#64748B">github-mcp · slack-mcp · 企业自研</text>
+  <text x="1080" y="718" text-anchor="middle" font-size="10.5" fill="#64748B">stdio transport · SSE（扩展阶段）</text>
+  <text x="1080" y="740" text-anchor="middle" font-size="10.5" fill="#64748B">JSON-RPC 协议</text>
+
+  <!-- 页脚 -->
+  <text x="620" y="1002" text-anchor="middle" font-size="10.5" fill="#94A3B8">依据 docs/TechnicalSolution.md 架构章节绘制 —— OryxOS 1.0 运行时内核（核心阶段）</text>
+</svg>

@@ -1,6 +1,10 @@
 target/
 .oryxos/
 .tools/
+.tmp/
+node_modules/
+website/.vitepress/cache/
+website/.vitepress/dist/
 *.iml
 .idea/
 .vscode/

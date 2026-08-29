@@ -1,0 +1,14 @@
+{
+  "name": "oryxos-website",
+  "version": "1.0.0",
+  "description": "OryxOS —— Java 实现的开源 Agent OS",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
