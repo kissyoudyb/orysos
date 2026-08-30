@@ -178,6 +178,8 @@ OryxOS 是一个 Spring Boot 3.x 单体应用，对外只有两个入口（CLI C
 
 ## 社区
 
+**项目仓库：<https://github.com/kissyoudyb/orysos>**
+
 OryxOS 是 [oryx-labs](docs/oryx-labs.md) 社区的项目——一个 AI coding 驱动、爱好驱动的 AI 探索社区，聚集 AI infra、Agent、AI 应用、AI 工具方向的动手者，用 AI coding 把想法做成能跑的东西。
 
 ## 参与贡献

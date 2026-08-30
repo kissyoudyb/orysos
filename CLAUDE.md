@@ -2,6 +2,8 @@
 
 OryxOS —— Java 实现的 Agent OS 运行时内核（oryx-labs 社区项目）。Maven 多模块骨架已初始化（9 个模块，`mvn package` 全部通过），功能代码按 `docs/AiProgrammingGuide.md` 的思路用 AI 编程实施：主体开发走 Spec-Kit 流程，增量开发直接对话修改。
 
+**远程仓库（唯一推送目标）：<https://github.com/kissyoudyb/orysos.git>**。一切提交与推送只面向此仓库，绝不向其他仓库（如 oryx-labs/oryxos）推送——kissyoudyb 账号对其无写权限。提示词日志（docs/prompt/NN.md）也入库到此仓库。
+
 本文件是 docs/ 的摘要和红线清单，细节冲突时以 docs/ 原文为准。
 
 ## 权威文档
