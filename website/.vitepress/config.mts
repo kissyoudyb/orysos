@@ -86,7 +86,7 @@ export default defineConfig({
     zh: {
       label: '中文',
       lang: 'zh-CN',
-      link: '/orysos/zh/',
+      // 语言切换自动按当前页路径推导对应语言页，不要配置 link（VitePress 会再拼一次 base 导致 404）
       themeConfig: {
         nav: [
           { text: '首页', link: '/zh/' },
