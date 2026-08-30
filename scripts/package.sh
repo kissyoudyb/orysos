@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 # Package OryxOS changed files into a tar.gz and sync to remote server.
 # Usage: ./scripts/package.sh [output_dir]
+#
+# Environment:
+#   ORYXOS_SYNC_HOST   (required) remote target, e.g. "root@your-server"
+#   ORYXOS_SYNC_DIR    (optional) remote directory, default /root/orysos
 
 set -euo pipefail
 
 # ── Configuration ─────────────────────────────────────────────────────────────
-REMOTE_HOST="root@117.72.92.117"
+REMOTE_HOST="${ORYXOS_SYNC_HOST:?请先设置 ORYXOS_SYNC_HOST 环境变量，例如 export ORYXOS_SYNC_HOST=root@your-server}"
 REMOTE_DIR="/root/orysos"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
