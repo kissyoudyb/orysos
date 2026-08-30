@@ -455,7 +455,7 @@ java -jar oryxos-boot/target/oryxos-boot-*.jar serve  # REST API :8080</code></p
   font-size: clamp(64px, 12vw, 110px);
   font-weight: 700;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #24245c 0%, #5b5bd6 70%, #8888f0 100%);
+  background: linear-gradient(135deg, #c23531 0%, #e26358 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -482,8 +482,8 @@ java -jar oryxos-boot/target/oryxos-boot-*.jar serve  # REST API :8080</code></p
 }
 .oryx-btn-primary {
   padding: 11px 28px;
-  border-radius: 8px;
-  background: var(--oryx-brand-500);
+  border-radius: 9999px;
+  background: var(--oryx-brand-600);
   color: #ffffff;
   font-weight: 600;
   font-size: 14px;
@@ -491,7 +491,7 @@ java -jar oryxos-boot/target/oryxos-boot-*.jar serve  # REST API :8080</code></p
   transition: background 0.2s, transform 0.15s;
 }
 .oryx-btn-primary:hover {
-  background: var(--oryx-brand-600);
+  background: var(--oryx-brand-700);
   color: #ffffff;
   transform: translateY(-1px);
 }

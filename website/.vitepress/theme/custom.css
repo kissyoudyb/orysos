@@ -1,20 +1,20 @@
-/* ─── Brand tokens（配色参考 era.phadsci.com：violet 品牌色 + Tailwind 灰阶） ── */
+/* ─── Brand tokens（配色对齐 era.phadsci.com：红色品牌 + Tailwind 灰阶） ── */
 :root {
-  --oryx-brand-50: #f4f4fe;
-  --oryx-brand-100: #ebebfd;
-  --oryx-brand-200: #d6d6fb;
-  --oryx-brand-300: #b2b2f7;
-  --oryx-brand-400: #8888f0;
-  --oryx-brand-500: #5b5bd6;
-  --oryx-brand-600: #4848b8;
-  --oryx-brand-700: #36368a;
-  --oryx-brand-800: #24245c;
-  --oryx-brand-900: #12122e;
+  --oryx-brand-50: #fdf2f1;
+  --oryx-brand-100: #fbe3e1;
+  --oryx-brand-200: #f5bbb6;
+  --oryx-brand-300: #ee928a;
+  --oryx-brand-400: #e26358;
+  --oryx-brand-500: #c23531;
+  --oryx-brand-600: #a82b27;
+  --oryx-brand-700: #892421;
+  --oryx-brand-800: #6a1c1b;
+  --oryx-brand-900: #451010;
 
-  --vp-c-brand-1: #5b5bd6;
-  --vp-c-brand-2: #4848b8;
-  --vp-c-brand-3: #36368a;
-  --vp-c-brand-soft: rgba(91, 91, 214, 0.14);
+  --vp-c-brand-1: #c23531;
+  --vp-c-brand-2: #a82b27;
+  --vp-c-brand-3: #892421;
+  --vp-c-brand-soft: rgba(194, 53, 49, 0.12);
 
   --vp-nav-bg-color: rgba(255, 255, 255, 0.92);
   --vp-sidebar-bg-color: #ffffff;
